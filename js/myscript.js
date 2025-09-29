@@ -1,4 +1,4 @@
-//alert("Hola mundo");
+/*alert("Hola mundo");
 
 console.log("Hola k ase");
 
@@ -73,4 +73,38 @@ console.log(arrayfinal);
 
 arrayfinal[1][1] = 6;
 console.log(arrayfinal);
+*/
+var third_array = new Array (3,9,1,2,6,8,0,5,7235,52,53,345,43,6,346,345,65,36,35,5);
 
+/*for(var i = 0; third_array.length > i; i++) {
+    console.log(third_array[i]);
+}*/
+
+/*for (var i =third_array.length-1;i>=0;i--) {
+    console.log(third_array[i]);
+}*/
+
+/*var i = third_array.length-1;
+for (;i>=0;i--) {
+    console.log(third_array[i]);
+}*/
+
+/*third_array.forEach(function myFunction(item) {
+  console.log(item); 
+});*/
+
+let today = new Date();
+let first_october= new Date (2022,9,1);
+console.log(today);
+console.log(first_october);
+console.log(today.getDay());
+
+if (today>first_october){
+    console.log("Es mayor today")
+} else {
+    console.log("Es menor today")
+}
+
+function myFirstFunction () {
+    console.log("Thank for you click");
+}
