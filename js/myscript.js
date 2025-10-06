@@ -93,7 +93,7 @@ for (;i>=0;i--) {
   console.log(item); 
 });*/
 
-let today = new Date();
+/*let today = new Date();
 let first_october= new Date (2022,9,1);
 console.log(today);
 console.log(first_october);
@@ -103,8 +103,35 @@ if (today>first_october){
     console.log("Es mayor today")
 } else {
     console.log("Es menor today")
-}
+}*/
+
+let testString = 'test';
 
 function myFirstFunction () {
     console.log("Thank for you click");
 }
+
+function mySecondFunction() {
+    console.log("Thank you for you interest.");
+}
+
+function myThirdFunction(testString) {
+    console.log("Pesao");
+    console.log(testString);
+}
+
+var div = document.getElementById("my_div");
+div.classList.add("my_class");
+console.log(div);
+
+var div2 = document.getElementsByTagName("div");
+console.log(div2);
+
+var second_div = document.querySelector(".my_class");
+console.log(second_div);
+
+function $(selector) {
+    return document.querySelectorAll(selector);
+}
+console.log($("#my_third_div"));
+console.log($(".my_class"));
