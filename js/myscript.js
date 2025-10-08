@@ -1,4 +1,10 @@
+function $(selector) {
+    return document.querySelector(selector);
+}
+
 /*alert("Hola mundo");
+
+
 
 console.log("Hola k ase");
 
@@ -130,8 +136,22 @@ console.log(div2);
 var second_div = document.querySelector(".my_class");
 console.log(second_div);
 
-function $(selector) {
-    return document.querySelectorAll(selector);
-}
 console.log($("#my_third_div"));
 console.log($(".my_class"));
+console.log($(".pruebas"));
+
+$("#btn").addEventListener("click", function(){
+    var input = document.createElement("input");
+    input.setAttribute("type", "email");
+    input.setAttribute("placeholder", "E-mail");
+    input.setAttribute("name", "emails[]");
+    $("#form").appendChild(input);
+    myAlert("Add new email input");
+});
+
+function myAlert(msg) {
+    var div = document.createElement("div");
+    div.classList.add("alert");
+    div.innerHTML = msg;
+    $("body").insertBefore(div,$("body").firstChild);
+}
