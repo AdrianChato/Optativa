@@ -11,7 +11,11 @@ app.use((req,res) => {
 })
 */
 app.get('/pruebas', (req, res) => {
-  res.render("pruebas",{titulo:"Viva españa"})
+  res.render("pruebas",{titulo:"Viva españa", descripcion:"descripcion js funcionando"})
+})
+
+app.get('/pruebas2', (req, res) => {
+  res.render("pruebas2",{titulo:"Viva españa 2", descripcion:"descripcion js funcionando 2"})
 })
 
 app.get('/contacto', (req, res) => {
