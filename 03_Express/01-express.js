@@ -2,8 +2,10 @@ const express = require('express')
 const app = express()
 const port = 3000
 app.set('view engine', 'ejs')
-app.use('views', express.static(__dirname + '/views'))
-app.use(express.static(__dirname + '/public'))
+app.use('views', express.static(__dirname + '/views'));
+app.use(express.static(__dirname + '/public'));
+app.use('/', require('./router/rutas'));
+app.use('/pokemon', require('./router/pokemon'));
 
 /*
 app.use((req,res) => {
