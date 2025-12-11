@@ -1,24 +1,11 @@
 const express = require('express')
 const app = express()
 const port = 3000
-app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs')
+app.use('views', express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/public'));
 app.use('/', require('./router/rutas'));
 app.use('/pokemon', require('./router/pokemon'));
-
-//Conexión a base de datos
-const mongoose = require('mongoose');
-//Variables que tendremos siempre:
-//Lo correcto será declararlas EN VARIABLES DE ENTORNO
-//para que nadie vea directamente nuestras credenciales
-const user = 'asolleo287_db_user';
-const password = 'Adrii_1202';
-const dbname = 'pokemon';
-const uri = `mongodb+srv://${user}:${password}@cluster0.lkffzgx.mongodb.net/${dbname}?retryWrites=true&w=majority`;
-mongoose.connect(uri)
-  .then(() => console.log('Base de datos conectada'))
-  .catch(e => console.log(e))
 
 /*
 app.use((req,res) => {
