@@ -1,0 +1,49 @@
+<%- include("templates/cabecera",{tituloweb:"Tabla Motos"}) %>
+    <h1>Listado de Motos</h1>
+
+<a href="/moto/crear" class="btn btn-primary"> Añadir Moto</a>
+
+<br><br>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Matrícula</th>
+            <th>Cilindrada</th>
+            <th>ITV</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% arrayMotos.forEach(moto => { %>
+            <tr>
+                <td><%= moto.marca %></td>
+                <td><%= moto.modelo %></td>
+                <td><%= moto.matricula %></td>
+                <td><%= moto.cilindrada %> cc</td>
+                <td>
+                    <%= moto.itv_fecha 
+                        ? moto.itv_fecha.toLocaleDateString() 
+                        : '' %>
+                </td>
+                <td>
+                    <a 
+                    href="/moto/editar/<%= moto._id %>" 
+                    class="btn btn-warning btn-sm"
+                    >
+                    Editar
+                    </a>
+                    <a 
+                      href="/moto/borrar/<%= moto._id %>" 
+                      class="btn btn-danger btn-sm"
+                    >
+                      Borrar
+                    </a>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+<%- include("templates/cierre") %>

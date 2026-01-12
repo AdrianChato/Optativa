@@ -1,0 +1,47 @@
+<%- include("templates/cabecera",{tituloweb:"Editar Moto"}) %>
+<h1>Editar Moto</h1>
+
+<form action="/moto/editar/<%= moto._id %>" method="POST">
+
+    <div class="form-group">
+        <label>Marca</label>
+        <input type="text" name="marca" class="form-control" value="<%= moto.marca %>" required>
+    </div>
+
+    <div class="form-group">
+        <label>Modelo</label>
+        <input type="text" name="modelo" class="form-control" value="<%= moto.modelo %>" required>
+    </div>
+
+    <div class="form-group">
+        <label>Matrícula</label>
+        <input type="text" name="matricula" class="form-control" value="<%= moto.matricula %>" required>
+    </div>
+
+    <div class="form-group">
+        <label>Cilindrada (cc)</label>
+        <input type="number" name="cilindrada" class="form-control" value="<%= moto.cilindrada %>" required>
+    </div>
+
+    <div class="form-group">
+        <label>Fecha ITV</label>
+        <input type="date" name="itv_fecha" class="form-control" value="<%= moto.itv_fecha ? moto.itv_fecha.toISOString().substring(0,10) : '' %>" required>
+    </div>
+
+    <div class="form-group">
+        <label>QR Código</label>
+        <input type="text" name="qr_codigo" class="form-control" value="<%= moto.qr_codigo %>" required>
+    </div>
+
+    <div class="form-group">
+        <label>ID Propietario</label>
+        <input type="text" name="id_propietario" class="form-control" value="<%= moto.id_propietario %>" required>
+    </div>
+
+    <br>
+
+    <button type="submit" class="btn btn-success">Actualizar Moto</button>
+    <a href="/moto" class="btn btn-secondary">Cancelar</a>
+</form>
+
+<%- include("templates/cierre") %>

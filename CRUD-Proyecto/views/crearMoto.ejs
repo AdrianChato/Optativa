@@ -1,0 +1,52 @@
+<%- include("templates/cabecera",{tituloweb:"Nueva Moto"}) %>
+    <h1>Añadir Nueva Moto</h1>
+
+<form action="/moto" method="POST">
+
+    <div class="form-group">
+        <label>Marca</label>
+        <input type="text" name="marca" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label>Modelo</label>
+        <input type="text" name="modelo" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label>Matrícula</label>
+        <input type="text" name="matricula" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label>Cilindrada (cc)</label>
+        <input type="number" name="cilindrada" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label>Fecha ITV</label>
+        <input type="date" name="itv_fecha" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label>QR Código</label>
+        <input type="text" name="qr_codigo" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label>ID Propietario</label>
+        <input type="text" name="id_propietario" class="form-control" required>
+    </div>
+
+    <br>
+
+    <button type="submit" class="btn btn-success">
+        Guardar Moto
+    </button>
+
+    <a href="/moto" class="btn btn-secondary">
+        Cancelar
+    </a>
+
+</form>
+<%- include("templates/cierre") %>
